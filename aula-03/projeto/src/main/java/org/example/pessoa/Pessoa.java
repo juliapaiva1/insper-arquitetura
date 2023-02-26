@@ -1,7 +1,14 @@
 package org.example.pessoa;
 
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Pessoa {
 
+    @NotNull
+    @NotEmpty
     private String nome;
     private String cpf;
 
