@@ -65,8 +65,6 @@ public class GameServiceTests {
 
     @Test
     void test_saveGame() {
-
-
         Team team = new Team();
         team.setId(1);
         team.setIdentifier("time-1");
