@@ -27,6 +27,7 @@ public class BetController {
         return betService.verifyBet(betId);
     }
 
+<<<<<<< HEAD
     @GetMapping("/{partidaId}")
     public Map<String, Object> getBetsByPartida(@PathVariable Integer partidaId) {
         Partida partida = partidaService.getPartidaById(partidaId);
@@ -46,5 +47,11 @@ public class BetController {
         return response;
 }
 
+=======
+    @GetMapping("/{gameId}/game")
+    public List<Bet> getBetsByGame(@PathVariable String gameId) {
+        return betService.getBetsByGame(gameId);
+    }
+>>>>>>> 312ff09d40ba6d9c677f581d1587ebfd33a8e2fd
 
 }
