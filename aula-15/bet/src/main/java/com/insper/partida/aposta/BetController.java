@@ -27,4 +27,24 @@ public class BetController {
         return betService.verifyBet(betId);
     }
 
+    @GetMapping("/{partidaId}")
+    public Map<String, Object> getBetsByPartida(@PathVariable Integer partidaId) {
+        Partida partida = partidaService.getPartidaById(partidaId);
+
+        if (partida == null) {
+            throw new PartidaNotFoundException(partidaId);
+        }
+
+        List<Bet> bets = betService.listBetsByPartida(partidaId);
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("id", partida.getId());
+        response.put("home", partida.getHomeTeam());
+        response.put("away", partida.getAwayTeam());
+        response.put("bets", bets);
+
+        return response;
+}
+
+
 }

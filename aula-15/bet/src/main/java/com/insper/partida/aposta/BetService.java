@@ -18,6 +18,10 @@ public class BetService {
 
     }
 
+    public List<Bet> listBetsByPartida(Integer partidaId) {
+        return betRepository.findByPartidaId(partidaId);
+    }
+
     public List<Bet> listBets() {
         return null;
     }
